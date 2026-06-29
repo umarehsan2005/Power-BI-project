@@ -1,42 +1,39 @@
-# Road Acccident Analysis
-#### This project is about developing a dashboard for generating insights about road accident data in the United Kingdom.
-The dataset can be accessed [here](https://drive.google.com/file/d/14r7gIbStQMIdhJKL8DN7vfF4jNEirT1m/view).
+# Retail Store Sales Analysis
 
-## Dashboard Requirements
-* Primary KPI's - Total Casualties and Total Accident values for Current Year and YoY Growth
-* Primary KPI's - Total Casualties by Accident Severity for Current Year and YoY Growth
-* Secondary KPI's - Total Casualties with respect to Vehicle Type for Current Year
-* Monthly Trend showing comparison of Casualties for Current Year and Previous Year
-* Casualties by Road Type for Current Year
-* Current Year Casualties by Area/Location & Time i.e. day/night
-* Total Casualties and Total Accident by Location
+## Overview
+This PowerBI project focuses on analyzing a retail store with a chain of franchises across various cities in the country. The primary objectives of this analysis is to enhance the available payment options for customers to ensure a smooth purchasing experience and to identify franchises with lower sales for targeted marketing campaigns.
 
-## DAX Formulas Used in Measures
+## Data Sources
+The data for this project is sourced from the retail store's transaction database, which includes information such as sales transactions, payment methods, franchise locations, product details, and customer demographics.
 
-**1. Total Casualties For Current Year and Year on Year Growth**
+## Analysis Goals
+1. **Payment Options Enhancement**: Analyze customer payment preferences and trends to identify opportunities for improving the available payment options. This includes assessing the popularity of different payment methods across franchises and identifying any disparities or areas for improvement.
 
-(a) Current Year To Date Casualties -- CY Casualties Measure
-* `CY Casualties = TOTALYTD(SUM(Data[Number_of_Casualties]), 'Calendar'[Date])`
+2. **Franchise Sales Recognition**: Identify franchises with lower sales performance to initiate targeted marketing campaigns aimed at boosting sales in those locations. This involves analyzing sales trends, comparing performance across franchises, and identifying potential factors contributing to lower sales.
 
-(b) Previous Year Casualties -- PY Casualties Measure
-* `PY Casualties = CALCULATE(SUM(Data[Number_of_Casualties]), SAMEPERIODLASTYEAR('Calendar'[Date]))`
+## Project Steps
+1. **Data Cleaning and Preparation**: 
+   - Clean and preprocess the raw data to ensure consistency and accuracy.
+   - Perform data transformations and aggregation to prepare the data for analysis.
 
-(c) Year on Year Growth of Casualties - YoY Casualties Measure
-* `YoY Casualties = ([CY Casualties] - [PY Casualties])/[PY Casualties]`
+2. **Payment Options Analysis**:
+   - Visualize payment method usage patterns across franchises and over time.
+   - Identify trends and insights to optimize payment options for customers.
 
-**2. Total Accidents for Current Year and Year on Year Growth**
+3. **Franchise Sales Analysis**:
+   - Analyze sales performance metrics such as revenue, units sold, and average transaction value across franchises.
+   - Identify franchises with lower sales performance for targeted marketing initiatives.
 
-(a) Current Year Accidents Count -- CY Accidents Count Measure
-*  `CY Accidents Count = TOTALYTD(COUNT(Data[Accident_Index]), 'Calendar'[Date])`
+4. **Dashboard Creation**:
+   - Develop interactive dashboards to present key insights and findings.
+   - Enable stakeholders to explore data and gain actionable insights.
 
-(b) Previous Year Accidents Count -- PY Accidents Count Measure
-* `PY Accidents Count = CALCULATE(COUNT(Data[Accident_Index]), SAMEPERIODLASTYEAR('Calendar'[Date]))`
+## Future Enhancements
+1. **Customer Segmentation**: Implement customer segmentation analysis to tailor marketing strategies based on customer demographics and purchasing behavior.
+   
+2. **Predictive Analytics**: Integrate predictive modeling techniques to forecast future sales trends and identify potential areas for growth.
 
-(c) Year on Year Growth of Accidents - YoY Accidents Measure
-* `YoY Accidents = ([CY Accidents Count]-[PY Accidents Count])/[PY Accidents Count]`
+3. **Inventory Management Optimization**: Analyze inventory data to optimize stock levels and ensure adequate product availability across franchises.
 
-
-
-
-
-  
+## Conclusion
+This project aims to leverage data-driven insights to enhance the customer purchasing experience and drive sales growth for the retail store's franchises. By analyzing payment options and sales performance, the project provides actionable recommendations to improve operational efficiency and drive business success.
